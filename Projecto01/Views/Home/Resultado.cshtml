@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Resposta>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <title>EnqueteWeb!:: Resultado</title>
+</head>
+<body>
+    <div class="container">
+         <h1>EnqueteWeb:: Resultado Parcial</h1>
+             <h2>Resultado parcial</h2>
+             <h4>Você teria coragem de fazer uma viagem para Marte sem voltar?</h4>
+            @foreach(Resposta resposta in Model)
+            {
+                <p>@(resposta.Nome) : @(resposta.Sim.Value ? "Sim" : "Não")</p>
+            }
+            <p>
+                 <a class="btn btn-primary" asp-action="Index">Voltar ao Inicio</a>
+           </p>
+    </div>
+   
+</body>
+</html>
